@@ -7,20 +7,10 @@ pipeline {
       }
     }
 
-    stage('log') {
-      parallel {
-        stage('end') {
-          steps {
-            sh 'ls -a'
-          }
-        }
-
-        stage('front-end unit test') {
-          steps {
-            sh 'npm -v'
-          }
-        }
-
+    stage('end') {
+      steps {
+        sh 'ls -a'
+        echo 'task ended'
       }
     }
 
